@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'test'
+    }
+
+  }
   stages {
     stage('Compile') {
       steps {
@@ -12,7 +17,7 @@ pipeline {
         sh '''mvn clean verify sonar:sonar \\
   -Dsonar.projectKey=Petclinic \\
   -Dsonar.projectName=\'Petclinic\' \\
-  -Dsonar.host.url=http://65.2.36.5:9000 \\
+  -Dsonar.host.url=http://172.31.31.57:9000 \\
   -Dsonar.token=sqp_15ae143a59975213e13bb47e3911f31e420740e7'''
       }
     }
