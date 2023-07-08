@@ -41,7 +41,7 @@ pipeline {
           }
         }
 
-        stage('Integration and Performance Tests') {
+        stage('Integration and Performance tests') {
           steps {
             sh './mvnw verify'
           }
