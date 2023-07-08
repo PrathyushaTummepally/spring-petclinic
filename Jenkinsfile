@@ -34,6 +34,9 @@ pipeline {
     }
 
     stage('Deploy') {
+      environment {
+        node = 'test'
+      }
       parallel {
         stage('Deploy') {
           steps {
